@@ -7,6 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+
+import java.time.LocalDateTime;
 
 /**
  * @author $(bilal belhaj)
@@ -31,5 +34,12 @@ public class Avi {
     @Max(5)
     private Integer note;
 
-    
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "produit_id", nullable = false)
+    private Produit produit;
+
+    @CreatedDate
+    @Column(updatable = false)
+    private LocalDateTime createdAt;
+
 }
