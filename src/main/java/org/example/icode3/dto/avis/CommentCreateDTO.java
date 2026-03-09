@@ -8,14 +8,14 @@ import jakarta.validation.constraints.NotNull;
 /**
  * @author $(bilal belhaj)
  **/
-public record AvisCreateDTO(
+public record CommentCreateDTO(
         @NotBlank
-        String contenu,
+        String comment,
 
         @NotNull @Min(1) @Max(5)
-        Integer note,
+        Integer rating,
 
         @NotNull
-        Long produitId
+        Long productId
 ) {
 }

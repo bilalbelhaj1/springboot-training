@@ -4,9 +4,9 @@ package org.example.icode3.dto.categorie;
 /**
  * @author $(bilal belhaj)
  **/
-public record CategorieResponseDTO(
+public record CategoryResponseDTO(
         Long id,
         String name,
         String description,
-        int nombreProduits
+        int nmbProducts
 ) {}

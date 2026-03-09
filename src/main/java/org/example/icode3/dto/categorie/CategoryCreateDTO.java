@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 /**
  * @author $(bilal belhaj)
  **/
-public record CategoriwCreateDTO(
+public record CategoryCreateDTO(
         @NotBlank
         @Size(min = 2, max = 100)
         String name,

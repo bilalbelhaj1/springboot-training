@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 /**
  * @author $(bilal belhaj)
  **/
-public record ProduitUpdateDTO(
+public record ProductUpdateDTO(
         @Size(min = 2, max = 100)
         String title,
         String description,

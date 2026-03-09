@@ -8,15 +8,15 @@ import java.time.LocalDateTime;
 /**
  * @author $(bilal belhaj)
  **/
-public record ProduitResponseDTO(
+public record ProductResponseDTO(
         Long id,
         String title,
         String description,
-        BigDecimal prix,
+        BigDecimal price,
         Integer stock,
-        ProductStatus statut,
-        String categoorieNom,
-        int nombreAvis,
+        ProductStatus status,
+        String categoryName,
+        int nbrComments,
         LocalDateTime createdAt
 ) {
 }

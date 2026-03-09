@@ -5,11 +5,11 @@ import java.time.LocalDateTime;
 /**
  * @author $(bilal belhaj)
  **/
-public record AvisResponseDTO(
+public record CommentResponseDTO(
         Long id,
-        String contenu,
-        Integer note,
-        String produitTitre,
+        String comment,
+        Integer ratting,
+        String ProductTitle,
         LocalDateTime createdAt
 ) {
 }

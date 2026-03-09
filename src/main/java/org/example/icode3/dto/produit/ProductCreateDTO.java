@@ -7,18 +7,18 @@ import java.math.BigDecimal;
 /**
  * @author $(bilal belhaj)
  **/
-public record ProduitCreateDTO(
+public record ProductCreateDTO(
         @NotBlank @Size(min = 2, max = 100)
         String title,
         String description,
 
         @NotNull @DecimalMin("0.01")
-        BigDecimal prix,
+        BigDecimal price,
 
         @PositiveOrZero
         Integer stock,
 
         @NotNull
-        Long categorieID
+        Long categoryId
 ) {
 }
