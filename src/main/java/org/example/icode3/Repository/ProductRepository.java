@@ -1,7 +1,6 @@
 package org.example.icode3.Repository;
 
-import org.example.icode3.entity.Avi;
-import org.example.icode3.entity.Produit;
+import org.example.icode3.entity.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -12,21 +11,21 @@ import java.util.List;
 /**
  * @author $(bilal belhaj)
  **/
-public interface ProduitRepository extends JpaRepository<Produit, Long> {
+public interface ProductRepository extends JpaRepository<Product, Long> {
 
     @Query("""
            SELECT p
-           FROM Produit p
-           WHERE p.prix < :max
-           ORDER BY p.prix ASC
+           FROM Product p
+           WHERE p.price < :max
+           ORDER BY p.price ASC
            """)
-    List<Produit> findProduitsWithPrixLessThan(@Param("max") BigDecimal max);
+    List<Product> findProductsWithPriceLessThan(@Param("max") BigDecimal max);
 
     @Query("""
            SELECT p
-           FROM Produit p
-           JOIN p.categorie c
+           FROM Product p
+           JOIN p.category c
            WHERE c.name = :nomCategorie
            """)
-    List<Produit> findByCategorieNomWithJoin(@Param("nomCategorie") String nomCategorie);
+    List<Product> findByCategoryNomWithJoin(@Param("categoryName") String categoryName);
 }

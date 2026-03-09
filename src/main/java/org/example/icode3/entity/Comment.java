@@ -19,24 +19,24 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "avis")
-public class Avi {
+@Table(name = "comments")
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, columnDefinition = "TEXT")
-    private String contenu;
+    private String comment;
 
     @Column(nullable = false)
     @Min(1)
     @Max(5)
-    private Integer note;
+    private Integer rating;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "produit_id", nullable = false)
-    private Produit produit;
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
 
     @CreatedDate
     @Column(updatable = false)

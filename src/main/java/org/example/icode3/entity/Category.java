@@ -30,7 +30,7 @@ public class Category {
     @Column(length = 255)
     private String description;
 
-    @OneToMany(mappedBy = "categorie", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @Builder.Default
-    private List<Produit> produits = new ArrayList<>();
+    private List<Product> products = new ArrayList<>();
 }

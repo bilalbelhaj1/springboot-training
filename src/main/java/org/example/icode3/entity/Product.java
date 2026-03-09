@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.example.icode3.enums.StatusProduit;
+import org.example.icode3.enums.ProductStatus;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -23,9 +23,9 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "produits")
+@Table(name = "products")
 @EntityListeners(AuditingEntityListener.class)
-public class Produit {
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -37,7 +37,7 @@ public class Produit {
     private String description;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal prix;
+    private BigDecimal price;
 
     @Column(nullable = false)
     @Builder.Default
@@ -45,14 +45,14 @@ public class Produit {
 
     @Enumerated(EnumType.STRING)
     @Builder.Default
-    private StatusProduit statut = StatusProduit.DISPONIBLE;
+    private ProductStatus status = ProductStatus.DISPONIBLE;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "categorie_id", nullable = false)
-    private Category categorie;
+    @JoinColumn(name = "category_id", nullable = false)
+    private Category category;
 
-    @OneToMany(mappedBy = "produit", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
-    private List<Avi> avis;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
+    private List<Comment> comments;
 
     @CreatedDate
     @Column(updatable = false)

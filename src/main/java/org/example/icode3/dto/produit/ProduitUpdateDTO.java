@@ -3,7 +3,7 @@ package org.example.icode3.dto.produit;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.PositiveOrZero;
 import jakarta.validation.constraints.Size;
-import org.example.icode3.enums.StatusProduit;
+import org.example.icode3.enums.ProductStatus;
 
 import java.math.BigDecimal;
 
@@ -21,6 +21,6 @@ public record ProduitUpdateDTO(
         @PositiveOrZero
         Integer stock,
 
-        StatusProduit statut
+        ProductStatus statut
 ) {
 }

@@ -1,6 +1,6 @@
 package org.example.icode3.dto.produit;
 
-import org.example.icode3.enums.StatusProduit;
+import org.example.icode3.enums.ProductStatus;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -14,7 +14,7 @@ public record ProduitResponseDTO(
         String description,
         BigDecimal prix,
         Integer stock,
-        StatusProduit statut,
+        ProductStatus statut,
         String categoorieNom,
         int nombreAvis,
         LocalDateTime createdAt
